@@ -1,7 +1,7 @@
 export type City = {
   id: number;
   name: string;
-  officesCount: number;
+  officeCount: number;
   image: string;
   slug: string;
 };

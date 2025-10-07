@@ -6,7 +6,7 @@ export const officeSpaces: OfficeSpace[] = [
         slug: "angga-park-central-master-silicon-valley-star-class",
         price: 18560000,
         duration: "20 days",        
-        location: "Jakarta",
+        location: "Jakarta Pusat",
         rating: 4.8,
         address: "Jl. Kebon Jeruk No.1, Jakarta Pusat",
         image:"/assets/images/thumbnails/thumbnails-1.png",
