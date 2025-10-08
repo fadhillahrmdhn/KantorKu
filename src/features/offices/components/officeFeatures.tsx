@@ -1,18 +1,55 @@
 import Image from 'next/image';
 import React from 'react';
 
-const OfficeFeatures = () => {
+const FEATURES_MAP = [
+  {
+    label: 'Global Event',
+    description: 'Startup Contest',
+    icon: '/assets/images/icons/cup.svg',
+  },
+  {
+    label: 'Privacy',
+    description: 'For Yourself',
+    icon: '/assets/images/icons/security-user.svg',
+  },
+  {
+    label: 'Free Move',
+    description: 'Anytime 24/7',
+    icon: '/assets/images/icons/group.svg',
+  },
+  {
+    label: 'Sustainbility',
+    description: 'Long-term Goals',
+    icon: '/assets/images/icons/home-trend-up.svg',
+  },
+  {
+    label: 'Extra Snacks',
+    description: 'Work-Life Balance',
+    icon: '/assets/images/icons/coffee.svg',
+  },
+  {
+    label: 'Compact',
+    description: 'Good for Focus',
+    icon: '/assets/images/icons/3dcube.svg',
+  },
+];
+
+const OfficeFeatures = ({ features }: { features: string[] }) => {
   return (
     <div className="grid grid-cols-3 gap-x-5 gap-y-[30px]">
-
-      <div className="flex items-center gap-4">
-        <Image width={34} height={34} src="/assets/images/icons/security-user.svg" alt="icon" />
-        <div className="flex flex-col gap-[2px]">
-          <p className="font-bold text-lg leading-[24px]">Privacy</p>
-          <p className="text-sm leading-[21px]">For Yourself</p>
-        </div>
-      </div>
-      
+      {features.map((feature) => {
+        const matched = FEATURES_MAP.find((f) => f.label === feature);
+        if(!matched) return null;
+          return (
+            <div key={feature} className="flex items-center gap-4">
+              <Image width={34} height={34} src={matched.icon} alt={`${matched.label}icon`} />
+              <div className="flex flex-col gap-[2px]">
+                <p className="font-bold text-lg leading-[24px]">{matched.label}</p>
+                <p className="text-sm leading-[21px]">{matched.description}</p>
+              </div>
+            </div>
+          );
+      })}
     </div>
   );
 };
