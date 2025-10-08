@@ -7,13 +7,14 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 
 type Props = {
-  params: {
-    slug: string
-  }
+  params: Promise<{ slug: string }>
 }
 
-const CityDetailPage= ({ params }: Props) => {
-  const city = cities.find((city) => city.slug === params.slug)
+const CityDetailPage= async ({ params }: Props) => {
+
+  const { slug } = await params
+
+  const city = cities.find((city) => city.slug === slug)
 
   if (!city) return notFound();
 

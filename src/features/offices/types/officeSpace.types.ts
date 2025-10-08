@@ -3,6 +3,7 @@ id: number;
 title: string;
 slug: string;
 price: number;
+phone: string;
 duration: string;
 address: string;
 about: string;

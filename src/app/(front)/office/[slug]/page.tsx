@@ -7,13 +7,13 @@ import Image from 'next/image';
 import OfficeFeatures from '@/features/offices/components/officeFeatures';
 
 type Props = {
-  params: {
-    slug: string;
-  };
+  params:Promise<{ slug: string }>;
 };
 
-const page = ({ params }: Props) => {
-  const office = officeSpaces.find((office) => office.slug === params.slug);
+const OfficeSpaceDetailPage = async({ params }: Props) => {
+  const { slug } = await params;
+
+  const office = officeSpaces.find((office) => office.slug === slug);
 
   if (!office) return notFound();
 
@@ -105,9 +105,14 @@ const page = ({ params }: Props) => {
                   <span>Save for Later</span>
                 </button>
               ) : (
-                <a href="booking.html" className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
+                <a 
+                target='_blank' 
+                href={`https://wa.me/${office.phone}?text=Hello, saya ingin booking kantor ${office.title}. detailnya https://localhost:3000/office/${office.slug}`} 
+                className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
+
                   <Image width={24} height={24} src="/assets/images/icons/slider-horizontal-white.svg" alt="icon" />
                   <span>Book This Office</span>
+
                 </a>
               )}
             </div>
@@ -161,4 +166,4 @@ const page = ({ params }: Props) => {
   );
 };
 
-export default page;
+export default OfficeSpaceDetailPage;
