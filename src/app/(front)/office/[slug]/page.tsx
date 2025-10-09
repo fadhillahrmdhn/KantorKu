@@ -6,11 +6,53 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import OfficeFeatures from '@/features/offices/components/officeFeatures';
 
+import type { Metadata } from 'next';
+
 type Props = {
-  params:Promise<{ slug: string }>;
+  params: Promise<{ slug: string }>;
 };
 
-const OfficeSpaceDetailPage = async({ params }: Props) => {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+
+  const office = officeSpaces.find((item) => item.slug === slug);
+
+  if (!office) {
+    return {
+      title: 'Office Not Found',
+      description: 'The office you are looking for does not exist.',
+    };
+  }
+
+  const fullImageUrl = office.image.startsWith('http') ? office.image : `https://example.com${office.image}`;
+
+  return {
+    title: {
+      absolute: `${office.title} ー office`,
+    },
+    description: `Discover a premium office space in ${office.title} with KantorKu. Find the perfect workspace equipped with modern facilities at a competitive price.`,
+    openGraph: {
+      title: `${office.title} ー office`,
+      description: `Discover a premium office space in ${office.title} with KantorKu. Find the perfect workspace equipped with modern facilities at a competitive price.`,
+      type: 'website',
+      locale: 'en_US',
+      siteName: 'KantorKu',
+      url: `https://kantorku.com/office/${office.slug}`,
+      images: [fullImageUrl],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${office.title} ー office`,
+      description: `Discover a premium office space in ${office.title} with KantorKu. Find the perfect workspace equipped with modern facilities at a competitive price.`,
+      images: [fullImageUrl],
+    },
+    alternates: {
+      canonical: `https://kantorku.com/office/${office.slug}`,
+    },
+  };
+}
+
+const OfficeSpaceDetailPage = async ({ params }: Props) => {
   const { slug } = await params;
 
   const office = officeSpaces.find((office) => office.slug === slug);
@@ -105,14 +147,13 @@ const OfficeSpaceDetailPage = async({ params }: Props) => {
                   <span>Save for Later</span>
                 </button>
               ) : (
-                <a 
-                target='_blank' 
-                href={`https://wa.me/${office.phone}?text=Hello, saya ingin booking kantor ${office.title}. detailnya https://localhost:3000/office/${office.slug}`} 
-                className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]">
-
+                <a
+                  target="_blank"
+                  href={`https://wa.me/${office.phone}?text=Hello, saya ingin booking kantor ${office.title}. detailnya https://localhost:3000/office/${office.slug}`}
+                  className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
+                >
                   <Image width={24} height={24} src="/assets/images/icons/slider-horizontal-white.svg" alt="icon" />
                   <span>Book This Office</span>
-
                 </a>
               )}
             </div>

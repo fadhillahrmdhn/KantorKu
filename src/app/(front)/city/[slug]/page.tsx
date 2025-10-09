@@ -2,12 +2,62 @@ import Navbar from '@/components/Navbar'
 import { cities } from '@/features/cities/data/cities.mock'
 import OfficeSpaceCard from '@/features/offices/components/officeSpaceCard'
 import { officeSpaces } from '@/features/offices/data/officeSpaces.mock'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
+
 type Props = {
   params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata(
+  { params }: Props,
+): Promise<Metadata> {
+  const { slug } = await params;
+ 
+  const city = cities.find((item) => item.slug === slug);
+ 
+  if (!city) {
+    return {
+      title: 'City Not Found',
+      description: 'The city you are looking for does not exist.',
+    }
+  }
+
+  const fullImageUrl = city.image.startsWith('http')
+    ? city.image
+    : `https://example.com/${city.image}`;
+ 
+  return {
+    title: {
+      absolute: `${city.name} ー Office Space`,
+    },
+    description: `Explore premium office spaces in ${city.name} with KantorKu. Find your ideal workspace with top-notch facilities and affordable prices.`,
+    openGraph: {
+      title: `${city.name} ー Office Space`,
+      description: `Explore premium office spaces in ${city.name} with KantorKu. Find your ideal workspace with top-notch facilities and affordable prices.`,
+      type: 'website',
+      locale: 'en_US',
+      siteName: 'KantorKu',
+      url: `https://kantorku.com/city/${city.slug}`,
+      images: [
+        fullImageUrl
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${city.name} ー Office Space`,
+      description: `Explore premium office spaces in ${city.name} with KantorKu. Find your ideal workspace with top-notch facilities and affordable prices.`,
+      images: [
+        fullImageUrl
+      ],
+    },
+    alternates: {
+      canonical: `https://kantorku.com/city/${city.slug}`,
+    },
+  }
 }
 
 const CityDetailPage= async ({ params }: Props) => {
