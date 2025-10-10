@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'KantorKu - Rent Luxurious & Affordable Offices in Jakarta, Surabaya, Bandung, Bali',
+    default: 'KantorKu - Rent Luxurious & Affordable Offices',
     template: '%s | KantorKu',
   },
   description: 'Rent luxurious offices at affordable prices in Jakarta, Surabaya, Bandung, Bali, and other major cities. Find your dream office with complete facilities and affordable prices at KantorKu.',

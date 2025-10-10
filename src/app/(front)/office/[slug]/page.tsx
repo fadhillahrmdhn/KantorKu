@@ -7,6 +7,7 @@ import Image from 'next/image';
 import OfficeFeatures from '@/features/offices/components/officeFeatures';
 
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -164,7 +165,7 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-4">
                   <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-                    <img src="/assets/images/photos/photo-1.png" className="w-full h-full object-cover" alt="photo" />
+                    <Image width={60} height={60} src="/assets/images/photos/photo-1.png" className="w-full h-full object-cover" alt="photo" />
                   </div>
                   <div className="flex flex-col gap-[2px]">
                     <p className="font-bold">Masayoshi</p>
@@ -172,18 +173,18 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <a href="#">
-                    <img src="/assets/images/icons/call-green.svg" className="w-10 h-10" alt="icon" />
-                  </a>
-                  <a href="#">
-                    <img src="/assets/images/icons/chat-green.svg" className="w-10 h-10" alt="icon" />
-                  </a>
+                  <Link href="#">
+                    <Image width={40} height={40} src="/assets/images/icons/call-green.svg" alt="icon" />
+                  </Link>
+                  <Link href="#">
+                    <Image width={40} height={40} src="/assets/images/icons/chat-green.svg" alt="icon" />
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center justify-between gap-3">
                 <div className="flex items-center gap-4">
                   <div className="w-[60px] h-[60px] rounded-full overflow-hidden">
-                    <img src="/assets/images/photos/photo-2.png" className="w-full h-full object-cover" alt="photo" />
+                    <Image width={60} height={60} src="/assets/images/photos/photo-2.png" className="w-full h-full object-cover" alt="photo" />
                   </div>
                   <div className="flex flex-col gap-[2px]">
                     <p className="font-bold">Fuji Ovina</p>
@@ -191,12 +192,12 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <a href="#">
-                    <img src="/assets/images/icons/call-green.svg" className="w-10 h-10" alt="icon" />
-                  </a>
-                  <a href="#">
-                    <img src="/assets/images/icons/chat-green.svg" className="w-10 h-10" alt="icon" />
-                  </a>
+                  <Link href="#">
+                    <Image width={40} height={40} src="/assets/images/icons/call-green.svg"  alt="icon" />
+                  </Link>
+                  <Link href="#">
+                    <Image width={40} height={40} src="/assets/images/icons/chat-green.svg"  alt="icon" />
+                  </Link>
                 </div>
               </div>
             </div>
