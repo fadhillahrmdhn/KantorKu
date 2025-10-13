@@ -4,8 +4,8 @@ import Image from 'next/image'
 const Header = () => {
   return (
           <header className="flex flex-col w-full">
-        <section id="Hero-Banner" className="relative flex h-[720px] -mb-[93px]">
-          <div id="Hero-Text" className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] ml-[calc((100%-1130px)/2)] z-10">
+        <section id="Hero-Banner" className=" relative flex h-[720px] -mb-[93px]">
+          <div id="Hero-Text" className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] mx-auto lg:!ml-[calc((100%-1130px)/2)]  z-10">
             <div className="flex items-center w-fit rounded-full py-2 px-4 gap-[10px] bg-[#000929]">
               <Image width={20} height={20} src="/assets/images/icons/crown-white.svg" alt="icon" />
               <span className="font-semibold text-white">We’ve won top productivity 500 fortunes</span>
@@ -27,7 +27,7 @@ const Header = () => {
               </a>
             </div>
           </div>
-          <div id="Hero-Image" className="absolute right-0 w-[calc(100%-((100%-1130px)/2)-305px)] h-[720px] rounded-bl-[40px] overflow-hidden">
+          <div id="Hero-Image" className="absolute right-0 w-[100%] lg:w-[70%] h-[720px] rounded-bl-[40px] overflow-hidden">
             <Image src="/assets/images/backgrounds/banner.webp" fill style={{ objectFit: 'cover' }} alt="hero background" priority />
           </div>
         </section>
