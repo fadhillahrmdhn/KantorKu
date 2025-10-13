@@ -1,4 +1,4 @@
-import BenefitsSection from '@/components/BenefitsSection';
+import BenefitsSection from '@/features/benefits/sections/BenefitsSection';
 import Header from '@/components/Header';
 import Navbar from '@/components/Navbar';
 import CitiesSection from '@/features/cities/sections/CitiesSection';
