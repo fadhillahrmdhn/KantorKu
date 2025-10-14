@@ -11,7 +11,7 @@ const OfficeSection = () => {
               <br />
               For Your Better Productivity.
             </h2>
-            <div className="grid grid-cols-3 gap-[30px]">
+            <div className="grid grid-cols-3 gap-[30px] px-[30px] lg:!px-0">
               {officeSpaces.map((office) => (
                 <OfficeSpaceCard key={office.id} officeSpace={office} />
               ))}
