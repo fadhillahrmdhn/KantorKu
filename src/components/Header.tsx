@@ -5,10 +5,10 @@ const Header = () => {
   return (
     <header className="flex flex-col w-full">
       <section id="Hero-Banner" className=" relative flex h-[720px] -mb-[93px] px-5 lg:!px-0">
-        <div id="Hero-Text" className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] mx-auto lg:!ml-[calc((100%-1130px)/2)]  z-9">
-          <div className="flex items-center w-fit rounded-full py-2 px-4 gap-[10px] bg-[#000929]">
+        <div id="Hero-Text" className=" relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-5 sm:!p-10  gap-[30px] bg-white mt-[70px] mx-auto lg:!ml-[calc((100%-1130px)/2)]  z-9">
+          <div className="flex items-center w-fit rounded-full py-2 px-3 sm:!px-4 gap-[10px] bg-[#000929]">
             <Image width={20} height={20} src="/assets/images/icons/crown-white.svg" alt="icon" />
-            <span className="font-semibold text-white">We’ve won top productivity 500 fortunes</span>
+            <span className="font-semibold text-sm sm:!text-base text-white">We’ve won top productivity 500 fortunes</span>
           </div>
           <h1 className="font-extrabold text-[50px] leading-[60px]">
             All Great Offices.
@@ -16,14 +16,14 @@ const Header = () => {
             Grow Your Business.
           </h1>
           <p className="text-lg leading-8 text-[#000929]">Kantor yang tepat dapat memberikan impact pekerjaan menjadi lebih baik dan sehat dalam tumbuhkan karir.</p>
-          <div className="flex items-center gap-5">
-            <a href="#" className="flex items-center rounded-full p-[20px_26px] gap-3 bg-[#0D903A]">
+          <div className="flex flex-col sm:!flex-row items-center gap-5">
+            <a href="#" className="w-full sm:!w-auto flex items-center justify-center rounded-full p-4 sm:!p-[20px_26px] gap-3 bg-[#0D903A]">
               <Image width={30} height={30} src="/assets/images/icons/slider-horizontal-white.svg" alt="icon" />
-              <span className="font-bold text-xl leading-[30px] text-[#F7F7FD]">Explore Now</span>
+              <span className="font-bold text-base sm:!text-xl leading-[30px] text-[#F7F7FD]">Explore Now</span>
             </a>
-            <a href="#" className="flex items-center rounded-full border border-[#000929] p-[20px_26px] gap-3 bg-white">
+            <a href="#" className="w-full sm:!w-auto flex items-center justify-center rounded-full border border-[#000929] p-4 sm:!p-[20px_26px] gap-3 bg-white">
               <Image width={30} height={30} src="/assets/images/icons/video-octagon.svg" alt="icon" />
-              <span className="font-semibold text-xl leading-[30px]">Watch Story</span>
+              <span className="font-semibold text-base sm:!text-xl leading-[30px]">Watch Story</span>
             </a>
           </div>
         </div>
@@ -31,7 +31,7 @@ const Header = () => {
           <Image src="/assets/images/backgrounds/banner.webp" fill style={{ objectFit: 'cover' }} alt="hero background" priority />
         </div>
       </section>
-<div className="flex flex-col pt-[150px] pb-10 px-5 md:px-10 lg:!px-[120px] gap-10 bg-[#0D903A]">
+      <div className="flex flex-col pt-[150px] pb-10 px-5 md:px-10 lg:!px-[120px] gap-10 bg-[#0D903A]">
         <div className="logo-contianer flex items-center justify-center flex-wrap max-w-[1130px] mx-auto gap-[60px]">
           <Image width={80} height={38} src="/assets/images/logos/TESLA.svg" alt="clients logo" />
           <Image width={113} height={38} src="/assets/images/logos/Libra 2.svg" alt="clients logo" />
