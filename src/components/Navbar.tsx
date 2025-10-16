@@ -43,9 +43,11 @@ const Navbar = () => {
           <HamburgerButton isMenuOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
 
+
+      </div>
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white absolute w-full left-0 shadow-lg py-4">
+          <div className="md:hidden bg-stone-50 absolute w-full left-0 shadow-lg py-4 z-10">
             <ul className="flex flex-col items-center gap-6">
               <li>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
@@ -74,8 +76,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-        )}
-      </div>
+        )}      
     </nav>
   );
 };

@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header className="flex flex-col w-full">
       <section id="Hero-Banner" className=" relative flex h-[720px] -mb-[93px] px-5 lg:!px-0">
-        <div id="Hero-Text" className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] mx-auto lg:!ml-[calc((100%-1130px)/2)]  z-10">
+        <div id="Hero-Text" className="relative flex flex-col w-full max-w-[650px] h-fit rounded-[30px] border border-[#E0DEF7] p-10 gap-[30px] bg-white mt-[70px] mx-auto lg:!ml-[calc((100%-1130px)/2)]  z-9">
           <div className="flex items-center w-fit rounded-full py-2 px-4 gap-[10px] bg-[#000929]">
             <Image width={20} height={20} src="/assets/images/icons/crown-white.svg" alt="icon" />
             <span className="font-semibold text-white">We’ve won top productivity 500 fortunes</span>
