@@ -10,7 +10,7 @@ const Header = () => {
             <Image width={20} height={20} src="/assets/images/icons/crown-white.svg" alt="icon" />
             <span className="font-semibold text-sm sm:!text-base text-white">We’ve won top productivity 500 fortunes</span>
           </div>
-          <h1 className="font-extrabold text-[50px] leading-[60px]">
+          <h1 className="font-extrabold text-[32px] sm:!text-[50px] leading-tight sm:!leading-[60px]">
             All Great Offices.
             <br />
             Grow Your Business.
