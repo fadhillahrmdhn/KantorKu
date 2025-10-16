@@ -47,7 +47,7 @@ const Navbar = () => {
       </div>
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white absolute w-full left-0 shadow-lg py-4 z-10">
+          <div className="md:hidden bg-white absolute w-full left-0 !shadow-sm py-4 z-10">
             <ul className="flex flex-col items-center gap-6">
               <li>
                 <Link href="/" onClick={() => setIsMenuOpen(false)}>
