@@ -8,12 +8,12 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 function CitiesSection() {
   return (
     <section id="Cities" className="flex flex-col gap-[30px] mt-[100px]">
-      <div className="w-full max-w-[1130px] mx-auto flex items-center justify-between px-5 lg:!px-0">
-        <h2 className="font-bold text-[32px] leading-[48px] text-nowrap ">
+      <div className="w-full max-w-[1130px] mx-auto flex flex-col md:!flex-row items-center justify-between gap-4 px-5 lg:!px-0">
+        <h2 className="font-bold text-[28px] md:!text-[32px] leading-tight md:!leading-[48px] text-center md:text-left">
           You Can Choose <br />
           Our Favorite Cities
         </h2>
-        <a href="#" className="rounded-full rounded-full !shadow-sm py-3 px-5 bg-white font-bold">
+        <a href="#" className="w-auto text-center rounded-full !shadow-sm py-3 px-5 bg-white font-bold">
           Explore All City
         </a>
       </div>
