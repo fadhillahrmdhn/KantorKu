@@ -31,7 +31,7 @@ const Header = () => {
           <Image src="/assets/images/backgrounds/banner.webp" fill style={{ objectFit: 'cover' }} alt="hero background" priority />
         </div>
       </section>
-      <div className="flex flex-col pt-[150px] pb-10 px-[120px] gap-10 bg-[#0D903A]">
+<div className="flex flex-col pt-[150px] pb-10 px-5 md:px-10 lg:!px-[120px] gap-10 bg-[#0D903A]">
         <div className="logo-contianer flex items-center justify-center flex-wrap max-w-[1130px] mx-auto gap-[60px]">
           <Image width={80} height={38} src="/assets/images/logos/TESLA.svg" alt="clients logo" />
           <Image width={113} height={38} src="/assets/images/logos/Libra 2.svg" alt="clients logo" />
@@ -39,7 +39,7 @@ const Header = () => {
           <Image width={138} height={38} src="/assets/images/logos/Facebook 7.svg" alt="clients logo" />
           <Image width={148} height={31} src="/assets/images/logos/Microsoft 6.svg" alt="clients logo" />
         </div>
-        <div className="flex justify-center gap-[50px]">
+        <div className="grid grid-cols-2 lg:!grid-cols-4 justify-center gap-[50px]">
           <div className="flex flex-col gap-[2px] text-center">
             <p className="text-xl leading-[30px] text-[#F7F7FD]">Comfortable Space</p>
             <p className="font-bold text-[38px] leading-[57px] text-white">580M+</p>
