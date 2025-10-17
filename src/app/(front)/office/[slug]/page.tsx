@@ -110,7 +110,9 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
             </a>
           </div>
         </div>
-        <div className="w-[392px] flex flex-col shrink-0 gap-[30px]">
+
+        {/* Desktop Sidebar */}
+        <div className="hidden md:flex flex-col w-[392px] shrink-0 gap-[30px]">
           <div className="flex flex-col rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[30px] bg-white">
             {office.isFullyBooked ? (
               <div>
@@ -193,15 +195,26 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
                 </div>
                 <div className="flex items-center gap-3">
                   <Link href="#">
-                    <Image width={40} height={40} src="/assets/images/icons/call-green.svg"  alt="icon" />
+                    <Image width={40} height={40} src="/assets/images/icons/call-green.svg" alt="icon" />
                   </Link>
                   <Link href="#">
-                    <Image width={40} height={40} src="/assets/images/icons/chat-green.svg"  alt="icon" />
+                    <Image width={40} height={40} src="/assets/images/icons/chat-green.svg" alt="icon" />
                   </Link>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="md:hidden fixed bottom-0 w-full px-5 py-4 bg-white border-t border-[#E0DEF7] z-20">
+          <a
+            target="_blank"
+            href={`https://wa.me/${office.phone}?text=Hello, saya ingin booking kantor ${office.title}. detailnya https://localhost:3000/office/${office.slug}`}
+            className="flex items-center justify-center w-full rounded-full p-[16px_26px] gap-3 bg-[#0D903A] font-bold text-[#F7F7FD]"
+          >
+            <Image width={24} height={24} src="/assets/images/icons/slider-horizontal-white.svg" alt="icon" />
+            <span>Book This Office</span>
+          </a>
         </div>
       </section>
     </>
