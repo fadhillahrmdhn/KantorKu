@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -38,45 +38,47 @@ const Navbar = () => {
           <Image width={24} height={24} src="/assets/images/icons/call.svg" alt="icon" />
           <span className="font-semibold">Contact Us</span>
         </Link>
-        <div className="md:hidden">
+        <div className="flex items-center pl-5 md:!hidden">
           {/* Hamburger button for mobile menu */}
+          <Link href="#" className="flex items-center gap-2 rounded-full border border-[#000929] mr-4 !p-2 sm:p-[12px_20px]">
+            <Image width={19} height={19} src="/assets/images/icons/call.svg" alt="icon"  />
+            <span className=" text-sm sm:!text-base font-semibold">Contact Us</span>
+          </Link>
           <HamburgerButton isMenuOpen={isMenuOpen} onClick={toggleMenu} />
         </div>
-
-
       </div>
-        {/* Mobile menu */}
-        {isMenuOpen && (
-          <div className="md:hidden bg-white absolute w-full left-0 !shadow-sm py-4 z-20">
-            <ul className="flex flex-col items-center gap-6">
-              <li>
-                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                  Browse
-                </Link>
-              </li>
-              <li>
-                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                  Popular
-                </Link>
-              </li>
-              <li>
-                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                  Categories
-                </Link>
-              </li>
-              <li>
-                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link href="/" onClick={() => setIsMenuOpen(false)}>
-                  My Booking
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}      
+      {/* Mobile menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-white absolute w-full left-0 !shadow-sm py-4 z-20">
+          <ul className="flex flex-col items-center gap-6">
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                Browse
+              </Link>
+            </li>
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                Popular
+              </Link>
+            </li>
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                Categories
+              </Link>
+            </li>
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                Events
+              </Link>
+            </li>
+            <li>
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
+                My Booking
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };
