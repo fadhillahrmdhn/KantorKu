@@ -105,13 +105,13 @@ const CityDetailPage= async ({ params }: Props) => {
   </header>
   <section
     id="Fresh-Space"
-    className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[70px] mb-[120px]"
+    className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[70px] mb-[120px] px-5 lg:!px-0"
   >
-    <h2 className="font-bold text-[32px] leading-[48px] text-nowrap">
+    <h2 className="font-bold text-[32px] leading-[48px] text-nowrap text-center md:!text-left ">
       Browse Offices
     </h2>
     {cityOffices.length > 0 ? (
-      <div className="grid grid-cols-3 gap-[30px]">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[30px] ">
         {cityOffices.map((office) => (
           <OfficeSpaceCard key={office.id} officeSpace={office} />
         ))}
