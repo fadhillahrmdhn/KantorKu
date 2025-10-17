@@ -105,9 +105,9 @@ const CityDetailPage= async ({ params }: Props) => {
   </header>
   <section
     id="Fresh-Space"
-    className="flex flex-col gap-[30px] w-full max-w-[1130px] mx-auto mt-[70px] mb-[120px] px-5 lg:!px-0"
+    className="flex flex-col gap-6 md:gap-[30px] w-full max-w-[1130px] mx-auto mt-16 md:mt-[70px] mb-20 md:mb-[120px] px-5 lg:!px-0"
   >
-    <h2 className="font-bold text-[32px] leading-[48px] text-nowrap text-center md:!text-left ">
+    <h2 className="font-bold text-[28px] md:!text-[32px] leading-[44px] md:!leading-[48px] text-nowrap text-center md:!text-left ">
       Browse Offices
     </h2>
     {cityOffices.length > 0 ? (
