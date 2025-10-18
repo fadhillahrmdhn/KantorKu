@@ -93,8 +93,42 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
           </div>
           <p className="leading-[30px]">{office.about}</p>
           <hr className="border-[#F6F5FD]" />
-          <h2 className="font-bold">You Get What You Need Most</h2>
 
+          {/*it's visible on mobile only */}
+          <div className="md:!hidden flex flex-col rounded-[20px] border border-[#E0DEF7] p-[30px] gap-[30px] bg-white">
+            {office.isFullyBooked ? (
+              <div>
+                <p className="font-bold text-xl leading-[30px]">
+                  Sorry. This office is <span className="text-[#FF2D2D]">fully booked</span> at this moment, try next time.
+                </p>
+              </div>
+            ) : (
+              <div>
+                <p className="font-extrabold text-[32px] leading-[48px] text-[#0D903A]">{office.price.toLocaleString('id', { style: 'currency', currency: 'IDR' })}</p>
+                <p className="font-semibold mt-1">For {office.duration} days working</p>
+              </div>
+            )}
+
+            <hr className="border-[#F6F5FD]" />
+            <div className="flex flex-col gap-5">
+              <div className="flex items-center gap-3">
+                <Image width={30} height={30} src="/assets/images/icons/verify.svg" alt="icon" />
+                <p className="font-semibold leading-[28px]">Mendapatkan akses pembelajaran terbaru terkait dunia startup</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Image width={30} height={30} src="/assets/images/icons/verify.svg" alt="icon" />
+                <p className="font-semibold leading-[28px]">Mendapatkan akses pembelajaran terbaru terkait dunia startup</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Image width={30} height={30} src="/assets/images/icons/verify.svg" alt="icon" />
+                <p className="font-semibold leading-[28px]">Mendapatkan akses pembelajaran terbaru terkait dunia startup</p>
+              </div>
+            </div>
+            <hr className="border-[#F6F5FD]" />
+          </div>
+
+          <hr className="border-[#F6F5FD]" />
+          <h2 className="font-bold">You Get What You Need Most</h2>
           <OfficeFeatures features={office.features} />
           <hr className="border-[#F6F5FD]" />
           <div className="flex flex-col gap-[6px]">
@@ -206,6 +240,7 @@ const OfficeSpaceDetailPage = async ({ params }: Props) => {
           </div>
         </div>
 
+        {/* the book button is visible on mobile only */}
         <div className="md:hidden fixed bottom-0 w-full px-5 py-4 bg-white border-t border-[#E0DEF7] z-20">
           <a
             target="_blank"
